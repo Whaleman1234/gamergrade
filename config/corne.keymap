@@ -59,17 +59,6 @@
     };
 };
 
-/ {
-	behaviors {
-		/omit-if-no-ref/ caps_word: behavior_caps_word {
-			compatible = "zmk,behavior-caps-word";
-			label = "CAPS_WORD";
-			#binding-cells = <0>;
-			continue-list = <SEMI>;
-		};
-	};
-};
-
 
 / {
         keymap {
@@ -84,10 +73,23 @@
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R      &kp T     &kp Y            &kp U           &kp I           &kp O   &kp P    &kp BSPC
    &kp LSHFT &kp A &kp S &kp D &kp F      &kp G     &kp H            &kp J           &kp K           &kp L   &kp SEMI &mt SQT RET
-   &kp LCTRL &kp Z &kp X &kp C &kp V      &kp B     &kp N            &kp M           &kp COMMA       &kp DOT &kp FSLH &caps_word
-                               &kp LSHIFT &kp SPACE &kp SPACE  &kp LSHFT &kp SPACE &kp TAB
+   &kp LCTRL &kp Z &kp X &kp C &kp V      &kp B     &kp N            &kp M           &kp COMMA       &kp DOT &kp FSLH &kp RET
+                               &kp LSHIFT &mo LWR &kp SPACE  &kp LSHFT &kp SPACE &kp TAB
                         >;
                 };
- 
+		
+                LOWER {
+// -----------------------------------------------------------------------------------------
+// | ESC  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  | BSPC| DEL | UP  |
+// | CAPS |  {  |  [  |  (  |  -  |  `  |   |  \  |  _  |  )  |  ]  |  }  | DOWN|
+// | CTRL |  "  |  +  |LC(C)|LC(V)|BTNXT|   | "|" |  /  |  =  |  ?  | LEFT|RIGHT|
+//                    | LALT| LWR | RAI |   | SHFT| SPC | RET |
+                        bindings = <
+   &kp ESC   &kp EXCL &kp AT   &kp POUND   &kp DLLR  &kp PRCNT    &kp CARET &kp AMPS  &kp STAR    &kp BSPC  &kp DEL  &kp UP
+   &kp CAPS  &kp LBRC &kp LBKT &kp LPAR    &kp MINUS &kp GRAVE    &kp BSLH  &kp UNDER &kp RPAR &kp RBKT  &kp RBRC &kp DOWN
+   &kp LCTRL &kp DQT  &kp PLUS &kp LC(C)   &kp LC(V) &bt BT_NXT   &kp PIPE  &kp FSLH  &kp EQUAL   &kp QMARK &kp LEFT &kp RIGHT
+                               &kp LALT     &mo LOWER &lt RAISE SPACE  &mt LSHFT SPACE &kp SPACE &kp RET
+                        >;
+                };
         };
 };
