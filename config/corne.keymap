@@ -67,28 +67,28 @@
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | SHFT |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | '    |
+// | ESC  |  C  |  I  |  J  |  M  |  T  |   |  H  |  J   |  K  |  L  |  ;  | '    |
 // | CTRL |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | RET  |
 //                    | LALT| LWR |SPC  |   | SHFT| SPC  | TAB |
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R      &kp T     &kp Y            &kp U           &kp I           &kp O   &kp P    &kp BSPC
-   &kp LSHFT &kp A &kp S &kp D &kp F      &kp G     &kp H            &kp J           &kp K           &kp L   &kp SEMI &mt SQT RET
+   &kp ESC &mt C A &mt I S &mt J D &mt M F  &mt T G    &kp H            &kp J           &kp K           &kp L   &kp SEMI &mt SQT RET
    &kp LCTRL &kp Z &kp X &kp C &kp V      &kp B     &kp N            &kp M           &kp COMMA       &kp DOT &kp FSLH &kp RET
-                               &kp LSHIFT &mo LOWER &kp SPACE  &kp LSHFT &kp SPACE &kp TAB
+                               &kp LSHIFT &mo LOWER &lt RAISE SPACE  &kp LSHFT &kp SPACE &kp TAB
                         >;
                 };
 		
-                LOWER {
+                RAISE { 
 // -----------------------------------------------------------------------------------------
-// | ESC  |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  | BSPC| DEL | UP  |
-// | CAPS |  {  |  [  |  (  |  -  |  `  |   |  \  |  _  |  )  |  ]  |  }  | DOWN|
-// | CTRL |  "  |  +  |LC(C)|LC(V)|BTNXT|   | "|" |  /  |  =  |  ?  | LEFT|RIGHT|
-//                    | LALT| LWR | RAI |   | SHFT| SPC | RET |
+// |     | 11 | 12 | 13 | 14  | 15  |   |  F7  |  F8 |  F9 | F10 | F11 | F12 |
+// |     | 1  | 2  | 3  |  4  |  5  |   |  6   |  7  |  8  |  9  |  0  |LWIN |
+// |     | 6  | 7  | 8  |  9  | 10  |   |      |     |     |     |PGUP |PGDN |
+//                   | LALT| LWR | RAI |   | SHFT | SPC | BSPC|
                         bindings = <
-   &kp ESC   &kp EXCL &kp AT   &kp POUND   &kp DLLR  &kp PRCNT    &kp CARET &kp AMPS  &kp STAR    &kp BSPC  &kp DEL  &kp UP
-   &kp CAPS  &kp LBRC &kp LBKT &kp LPAR    &kp MINUS &kp GRAVE    &kp BSLH  &kp UNDER &kp RPAR &kp RBKT  &kp RBRC &kp DOWN
-   &kp LCTRL &kp DQT  &kp PLUS &kp LC(C)   &kp LC(V) &bt BT_NXT   &kp PIPE  &kp FSLH  &kp EQUAL   &kp QMARK &kp LEFT &kp RIGHT
-                               &kp LALT     &mo LOWER &lt RAISE SPACE  &mt LSHFT SPACE &kp SPACE &kp RET
+   &none &kp N11 &kp N12   &kp N13   &kp N14    &kp N15            &kp F7    &kp F8    &kp F9   &kp F10 &kp F11   &kp F12 
+   &none  &kp N1 &kp N2   &kp N3   &kp N4    &kp N5            &kp N6    &kp N7    &kp N8   &kp N9  &kp N0    &kp LWIN
+   &none  &kp N6  &kp N7 &kp N8    &kp N9     &kp N10             &none     &none     &none    &none   &kp PG_UP &kp PG_DN
+                    	  &kp LALT     &mo LOWER &lt RAISE SPACE  &mt LSHFT SPACE &kp SPACE &kp BSPC
                         >;
                 };
         };
